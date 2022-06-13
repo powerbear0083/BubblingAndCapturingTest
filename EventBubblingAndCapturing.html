@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling and capturing</title>
+
+</head>
+<body>
+  <div > 
+    <button class="buttonClass">Click me</button>
+  </div>
+  
+  <script>
+    document.querySelector('.buttonClass').addEventListener('click', event => { 
+      alert('click event')
+    })
+    
+    setTimeout(() => {
+      addElement()
+
+    }, 500)
+    function addElement() {
+      const btn = document.createElement('button')
+      btn.className = 'buttonClass'
+      btn.innerText = '我是按鈕'
+      document.body.appendChild(btn)
+    }
+  </script>
+</body>
+</html>
